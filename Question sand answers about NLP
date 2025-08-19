@@ -1,0 +1,93 @@
+Got it ✅ — I’ll collect all the **questions you asked me about NLP** in this conversation and rewrite them cleanly in a **Q\&A format** so you can drop them straight into a GitHub README or notes file for your repository.
+
+---
+
+# 🧠 NLP Q\&A Collection
+
+### 1. **Q:** What does it mean when the instructor says *“those tokens haven’t fully preprocessed”*?
+
+**A:** It means the tokens are still in a raw or partially cleaned state. Preprocessing usually includes steps like lowercasing, removing punctuation, removing stopwords, stemming/lemmatization, handling numbers/special characters, and cleaning whitespace. Without these steps, the tokens aren’t uniform or ready for analysis.
+
+---
+
+### 2. **Q:** What is a **Pandas Series**?
+
+**A:** A Pandas Series is a **one-dimensional labeled array** that can hold any data type. It’s like a single column from a DataFrame or a smart Python list with an index. Example:
+
+```python
+import pandas as pd
+s = pd.Series([10, 20, 30])
+print(s)
+```
+
+Output:
+
+```
+0    10
+1    20
+2    30
+dtype: int64
+```
+
+---
+
+### 3. **Q:** Explain this code:
+
+```python
+unigrams = (pd.Series(nltk.ngrams(tokens, 1)).value_counts()) 
+print(unigrams) 
+unigrams[0:10].sort_values().plot.barh(color='lightsalmon', width=.9, figsize=(12, 8))
+plt.title('10 Most Frequently Occuring Unigrams')
+plt.ylabel('Unigram')
+plt.xlabel('# of Occurances')
+```
+
+**A:**
+
+* `nltk.ngrams(tokens, 1)` generates unigrams (1-word sequences).
+* `pd.Series(...)` converts them into a Pandas Series.
+* `.value_counts()` counts how often each unigram appears.
+* `unigrams[0:10]` selects the top 10 unigrams.
+* `.sort_values()` sorts them by frequency.
+* `.plot.barh(...)` plots a horizontal bar chart.
+* `plt.title`, `plt.ylabel`, `plt.xlabel` add labels to the chart.
+
+---
+
+### 4. **Q:** Why do we `import nltk`, `import pandas as pd`, and `import matplotlib.pyplot as plt`?
+
+**A:**
+
+* **NLTK** = Natural Language Toolkit → used for NLP tasks like tokenization, stopwords, stemming, n-grams.
+* **Pandas (`pd`)** = library for handling structured data (Series and DataFrames). The alias `pd` is used to shorten code.
+* **Matplotlib (`plt`)** = visualization library. `pyplot` is a submodule with plotting functions like `plot`, `bar`, `barh`. The alias `plt` makes it shorter.
+
+---
+
+### 5. **Q:** What is the difference between **Pandas** and **N-grams**?
+
+**A:**
+
+* **Pandas**: A library for data manipulation and analysis (tables, Series, DataFrames).
+* **N-grams**: An NLP concept — subsequences of length *N* from text. Example:
+
+  * Tokens: `["I", "love", "python"]`
+  * Bigrams: `[("I","love"), ("love","python")]`
+* You often use them together: generate n-grams with NLTK, then count/analyze them with Pandas.
+
+---
+
+### 6. **Q:** What is the difference between **N-grams** and a **Sequence**?
+
+**A:**
+
+* **Sequence**: Any ordered list of items (e.g., tokens `["I","love","python"]`).
+* **N-grams**: Fixed-length subsequences of size *N* taken from a sequence.
+
+  * Unigrams: `[("I",), ("love",), ("python",)]`
+  * Bigrams: `[("I","love"), ("love","python")]`
+* In short: a sequence is the whole ordered set, while n-grams are its slices of size *N*.
+
+---
+
+Would you like me to **format this as a ready-to-use Markdown README** (with nice headings, code blocks, and maybe a table of contents) so you can just copy-paste into GitHub?
