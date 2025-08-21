@@ -88,6 +88,9 @@ plt.xlabel('# of Occurances')
   * Bigrams: `[("I","love"), ("love","python")]`
 * In short: a sequence is the whole ordered set, while n-grams are its slices of size *N*.
 
+what is the difference between pandas and matplotlib:
+Pandas is for working with data (loading, cleaning, transforming, analyzing).
+Matplotlib is for visualizing data (creating charts and graphs).
 ---
 
 Would you like me to **format this as a ready-to-use Markdown README** (with nice headings, code blocks, and maybe a table of contents) so you can just copy-paste into GitHub?
